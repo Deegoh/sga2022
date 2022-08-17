@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour
 	public void StartGame()
 	{
 		Debug.Log("start");
-		// SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("Ben");
 	}
 	
 	public void ShowCredits()

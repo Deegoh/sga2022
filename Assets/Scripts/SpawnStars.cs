@@ -6,18 +6,27 @@ public class SpawnStars : MonoBehaviour
 {
 
     [SerializeField] private GameObject prefabStar;
+    [SerializeField] private GameObject prefabBubbleStar;
     private Vector3 _center;
     [SerializeField] private Vector3 size;
     [SerializeField] private float delay = 1.0f;
-    void Start()
+    private void Start()
     {
         StartCoroutine(SpawnStar());
     }
 
-    IEnumerator SpawnStar()
+    private IEnumerator SpawnStar()
     {
         while (true)
         {
+            if (LevelManager.Instance.Paragraphs.sentences.Count <= LevelManager.Instance.level)
+                break ;
+            GameObject starType = prefabStar;
+            if (LevelManager.Instance.level > 2)
+            {
+                if (Random.Range(1, 10) % 2 == 0)
+                    starType = prefabBubbleStar;
+            }
             _center = transform.position;
             LevelManager.Instance.letter = LevelManager.Instance.Paragraphs.choseRandomChar();
             int value;
@@ -35,7 +44,7 @@ public class SpawnStars : MonoBehaviour
             }
             // LevelManager.Alphabet.chosenLetter;
             Vector3 pos = _center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
-            Instantiate(prefabStar, pos, Quaternion.identity);
+            Instantiate(starType, pos, Quaternion.identity);
             yield return new WaitForSeconds(delay);
         }
     }

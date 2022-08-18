@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75032f79c730a4e4c8149a11c05a8ba2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabStar: {fileID: 4569111302658440198, guid: 4b015e7dd43356748a17bbe03ba0154b, type: 3}
-  center: {x: 0, y: 0, z: 0}
-  size: {x: 10, y: 10, z: 10}
+  prefabStar: {fileID: 1023131411925894996, guid: 1a3c42b7b90b8c04193f5ce20612ac1b, type: 3}
+  prefabBubbleStar: {fileID: 0}
+  size: {x: 3, y: 3, z: 3}
   delay: 5

@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8519218426492364824}
-  - component: {fileID: 8519218426492364838}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -32,53 +31,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8519218426492364838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8519218426492364826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cfc3e6daf44800944a3d6180544bb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sentences:
-    sentences:
-    - "\xC0 l\u2019aube du cr\xE9puscule, Sommeille l\u2019univers, Vide, \xE0 la
-      recherche de lumi\xE8re, Ou d\u2019un unique corpuscule  Un monde sombre, C\u2019est
-      dans celui-ci que je vis, Mais un jour l\u2019on ma dit, Que quelqu\u2019un
-      me sortirait de l\u2019ombre"
-    - Ipsum
-    stars: []
-  prefabParticles: {fileID: 2381008029710871677, guid: ed42d130eed7e0140bca097ca4f470f6, type: 3}
-  failedInputs: 0
-  letter: 0
-  starSprites:
-  - {fileID: 172311172, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -149857170, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -1037389008, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -1652256194, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 2056448, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -1575537968, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1471519438, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 518056191, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1341748800, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -1976150386, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1897039123, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 2135582374, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -930494640, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -928363807, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1685259100, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 76653593, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1508392095, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -1884305757, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1113835402, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -758063102, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1823529602, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 176194830, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -1375502726, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: -807046756, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1710528406, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
-  - {fileID: 1939044133, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}

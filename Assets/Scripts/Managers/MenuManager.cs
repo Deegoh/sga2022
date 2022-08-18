@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour
 {
+	[Header("MainMenu")]
 	public Button startButton;
 	public Button creditButton;
 	public Button quitButton;
@@ -15,14 +16,15 @@ public class MenuManager : MonoBehaviour
 		creditButton.onClick.AddListener(CreditGame);
 		quitButton.onClick.AddListener(QuitGame);
 	}
-	
+
+
 	private void OnDestroy()
 	{
 		startButton.onClick.RemoveListener(StartGame);
 		creditButton.onClick.RemoveListener(CreditGame);
 		quitButton.onClick.RemoveListener(QuitGame);
 	}
-	
+
 	public void StartGame()
 	{
 		GameManager.instance.StartGame();

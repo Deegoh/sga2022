@@ -17,8 +17,6 @@ public class Cube : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    // Start is called before the first frame update
-
     void Start()
     {
         StartCoroutine(spawnStar(starInterval, star));

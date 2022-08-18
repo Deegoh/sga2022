@@ -10,7 +10,7 @@ public class Sentences
 {
     public List<string> sentences = new List<string> {"lorem", "opsum"};
     int i = 0;
-    public List<GameObject> stars = new List<GameObject>(0);
+    public List<IAStars> stars = new List<IAStars>(0);
 
     public string CurrentSentence => sentences[i];
 
@@ -30,7 +30,6 @@ public class Sentences
             if (index != -1)
             {
                 sentences[i] = sentences[i].Remove(index, 1);
-                Debug.Log("The sentence: " + sentences[i]);
                 if (String.IsNullOrEmpty(sentences[i]))
                 {
                     i++;

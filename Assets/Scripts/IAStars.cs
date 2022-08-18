@@ -17,7 +17,7 @@ public class IAStars : MonoBehaviour
         _letter = LevelManager.Instance.Paragraphs.choseRandomChar();
         Debug.Log("The letter: " + _letter);
         LevelManager.Instance.Paragraphs.removeChar(_letter);
-        //Debug.Log(Sentences.sentences);
+        LevelManager.Instance.Paragraphs.stars.Add(this);
     }
 
     private void Update ()

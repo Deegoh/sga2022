@@ -65,7 +65,7 @@ public class Typer : MonoBehaviour
 
     private void ColorLetter()
     {
-        string newString = remainingWord.Remove(0, 1);
+        string newString = "<color=red>" + remainingWord[0] + "</color>" + remainingWord.Remove(0, 1);
         SetRemainingWord(newString);
     }
 

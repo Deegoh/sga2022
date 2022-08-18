@@ -2,21 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Serialization;
 
 public class IAStars : MonoBehaviour
 {
     //[SerializeField] private Sentences sentences;
     public float radius;
-    [Header("Letter")]
-    [SerializeField] public char _letter;
+    public char personalLetter;
 
     private void Start ()
     {
         string currentSentence = LevelManager.Instance.Paragraphs.CurrentSentence;
         Debug.Log("The currentSentence: " + currentSentence);
-        _letter = LevelManager.Instance.Paragraphs.choseRandomChar();
-        Debug.Log("The letter: " + _letter);
-        LevelManager.Instance.Paragraphs.removeChar(_letter);
+        Debug.Log("The letter: " + LevelManager.Instance.letter);
+        personalLetter = LevelManager.Instance.letter;
+        LevelManager.Instance.Paragraphs.removeChar(LevelManager.Instance.letter);
         LevelManager.Instance.Paragraphs.stars.Add(this);
     }
 

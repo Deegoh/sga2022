@@ -661,7 +661,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       ARCADECLASSIC_Sprites_24: 1710528406
-      ARCADECLASSIC_Sprites_2: -1037389008
+      ARCADECLASSIC_Sprites_10: 1897039123
       ARCADECLASSIC_Sprites_3: -1652256194
       ARCADECLASSIC_Sprites_1: -149857170
       ARCADECLASSIC_Sprites_11: 2135582374
@@ -684,7 +684,7 @@ TextureImporter:
       ARCADECLASSIC_Sprites_20: 1823529602
       ARCADECLASSIC_Sprites_0: 172311172
       ARCADECLASSIC_Sprites_21: 176194830
-      ARCADECLASSIC_Sprites_10: 1897039123
+      ARCADECLASSIC_Sprites_2: -1037389008
       ARCADECLASSIC_Sprites_9: -1976150386
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -9,38 +9,38 @@ using Random = UnityEngine.Random;
 public class Sentences
 {
     public List<string> sentences = new List<string> {"lorem", "opsum"};
-    int i = 0;
+    private int _i = 0;
     public List<IAStars> stars = new List<IAStars>(0);
 
-    public string CurrentSentence => sentences[i];
+    public string CurrentSentence => sentences[_i];
 
     // Start is called before the first frame update
     void Start()
     {
-        i = 0;
+        _i = 0;
     }
 
     public void removeChar(char c)
     {
-        if (sentences.Count > i)
+        int index = sentences[_i].IndexOf(c);
+        if (index != -1)
         {
-            Debug.Log(sentences.Count);
-            Debug.Log(i);
-            int index = sentences[i].IndexOf(c);
-            if (index != -1)
+            sentences[_i] = sentences[_i].Remove(index, 1);
+            if (String.IsNullOrEmpty(sentences[_i]))
             {
-                sentences[i] = sentences[i].Remove(index, 1);
-                if (String.IsNullOrEmpty(sentences[i]))
+                _i++;
+                if (LevelManager.Instance.level < sentences.Count)
                 {
-                    i++;
+                    LevelChangeManager.Instance.ChangeLevelHandler();
                 }
+                LevelManager.Instance.level++;
             }
         }
     }
 
     public char choseRandomChar()
     {
-        int randomIndex = Random.Range(0, sentences[i].Length);
-        return sentences[i][randomIndex];
+        int randomIndex = Random.Range(0, sentences[_i].Length);
+        return sentences[_i][randomIndex];
     }
 }

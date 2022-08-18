@@ -7,10 +7,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	public static bool gameIsPaused;
+	public AudioSource sfx;
 
 	private void Awake()
 	{
+		Cursor.visible = false; 
+		Cursor.lockState = CursorLockMode.Locked;
 		if (!instance)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -34,24 +36,6 @@ public class GameManager : MonoBehaviour
 		// SceneManager.LoadScene("Game");
 	}
 
-	public void PauseGame()
-	{
-		if(gameIsPaused)
-		{
-			Debug.Log("Play");
-			Time.timeScale = 1;
-			// AudioListener.pause = true;
-		}
-		else 
-		{
-			Debug.Log("Pause");
-			// pause.SetActive(true);
-			Time.timeScale = 0f;
-			// AudioListener.pause = false;
-		}
-		gameIsPaused = !gameIsPaused;
-	}
-
 	public void QuitGame()
 	{
 		Debug.Log("quit");
@@ -62,5 +46,10 @@ public class GameManager : MonoBehaviour
 	{
 		Debug.Log("mainMenu");
 		// SceneManager.LoadScene("MainMenu");
+	}
+	
+	public void PlaySfx()
+	{
+		sfx.Play();
 	}
 }

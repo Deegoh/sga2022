@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: reesayer  >
+  m_text: reesayer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}
   m_sharedMaterial: {fileID: -7403601478363161520, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}
@@ -1667,8 +1667,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278247167
-  m_fontColor: {r: 1, g: 0.87058824, b: 0, a: 1}
+    rgba: 4294963712
+  m_fontColor: {r: 0, g: 0.9490196, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2213,7 +2213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 535544707}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &2036517125
@@ -2594,7 +2594,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Menu >
+  m_text: Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}
   m_sharedMaterial: {fileID: -7403601478363161520, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}
@@ -2603,8 +2603,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294931713
-  m_fontColor: {r: 0.003921569, g: 0.45882353, b: 1, a: 1}
+    rgba: 4294963712
+  m_fontColor: {r: 0, g: 0.9490196, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2793,3 +2793,7 @@ MonoBehaviour:
   - 'Mega Chad 2 '
   - Mega Chad 3
   - Mega Chad 4
+  _replayButton: {fileID: 535544709}
+  _mainMenuButton: {fileID: 467541978}
+  _replay: {fileID: 1302630064}
+  _mainMenu: {fileID: 2124363493}

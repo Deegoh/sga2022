@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -10,6 +11,8 @@ public class PauseManager : MonoBehaviour
 	[Header("PauseMenu")]
 	[SerializeField] private Button _playButton;
 	[SerializeField] private Button _quitButton;
+	[SerializeField] private TextMeshProUGUI _play;
+	[SerializeField] private TextMeshProUGUI _quit;
 	[SerializeField] private Canvas _pauseMenu;
 	private bool _isPause;
 	private GameObject _lastselect;
@@ -35,6 +38,17 @@ public class PauseManager : MonoBehaviour
 		else
 		{
 			_lastselect = EventSystem.current.currentSelectedGameObject;
+		}
+		_play.color = new Color(0, 242, 255);
+		_quit.color = new Color(0, 242, 255);
+		switch (_lastselect.name)
+		{
+			case "Continuer":
+				_play.color = new Color(255, 215, 0);
+				break;
+			case "Quit":
+				_quit.color = new Color(255, 215, 0);
+				break;
 		}
 	}
 

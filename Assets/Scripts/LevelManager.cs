@@ -44,9 +44,10 @@ public class LevelManager : MonoBehaviour
             {
                 if (Char.ToLower(star.personalLetter) == c)
                 {
+                    TextManager.Instance.OnCorrectLetter(c);
                     Instantiate(prefabParticles, star.transform.position, Quaternion.identity);
                     Paragraphs.stars.Remove(star);
-                    // LevelManager.Instance.Paragraphs.removeChar(LevelManager.Instance.letter);
+                    Instance.Paragraphs.removeChar(Instance.letter);
                     Destroy(star.gameObject);
                     return;
                 }

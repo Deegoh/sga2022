@@ -16,16 +16,8 @@ public class IAStars : MonoBehaviour
         Debug.Log("The currentSentence: " + currentSentence);
         Debug.Log("The letter: " + LevelManager.Instance.letter);
         personalLetter = LevelManager.Instance.letter;
-        LevelManager.Instance.Paragraphs.removeChar(LevelManager.Instance.letter);
+        // LevelManager.Instance.Paragraphs.removeChar(LevelManager.Instance.letter);
         LevelManager.Instance.Paragraphs.stars.Add(this);
-    }
-
-    private void Update ()
-    {
-        // if (!agent.hasPath)
-        // {
-        //     agent.SetDestination (GetPoint.Instance.GetRandomPoint (transform, radius));
-        // }
     }
 
 #if UNITY_EDITOR

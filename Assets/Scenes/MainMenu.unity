@@ -6448,8 +6448,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075634305}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -0.0295, y: 0, z: -0}
-  m_LocalScale: {x: 0.002803298, y: 0.0028032989, z: 0.0028032977}
+  m_LocalPosition: {x: -0.0293, y: 0.0039, z: 0.0004}
+  m_LocalScale: {x: 0.0025847736, y: 0.0025847747, z: 0.0025847733}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 365066921}
@@ -6495,8 +6495,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c10b5bca3ec4142bfb6f9735fdd2d120, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: e72b02a11b9564c679e11f08272e2edf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6863,9 +6863,9 @@ MonoBehaviour:
   _start: {fileID: 55612926}
   _credit: {fileID: 247179211}
   _quit: {fileID: 915486898}
-  startAnimation: {fileID: 1902372718}
   sfxSource: {fileID: 1192816051}
   sfxButton: {fileID: 8300000, guid: be5d7e11bbeb9414db1946a42fbb3ca5, type: 3}
+  startAnimation: {fileID: 1902372718}
 --- !u!1 &1243798375
 GameObject:
   m_ObjectHideFlags: 0
@@ -7504,6 +7504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88c192febaf5ecd4782817a6fb6d5dbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  indexOfDeath: 0
 --- !u!4 &1833862239
 Transform:
   m_ObjectHideFlags: 0

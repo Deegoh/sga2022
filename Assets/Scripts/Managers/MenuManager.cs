@@ -78,7 +78,7 @@ public class MenuManager : MonoBehaviour
 	
 	IEnumerator waitForStartingAnimation()
 	{
-		yield return new WaitForSeconds(3.2f);
+		yield return new WaitForSeconds(4.5f);
 		GameManager.instance.StartGame();
 	}
 

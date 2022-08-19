@@ -20,25 +20,24 @@ public class LevelChangeManager : MonoBehaviour
     }
     public void ChangeLevelHandler()
     {
-        foreach (var star in LevelManager.Instance.Paragraphs.stars)
-        {
-            if (star)
-                Destroy(star.gameObject);
-        }
-        if (LevelManager.Instance.level != 0)
-            LevelSuccess();
+        // foreach (var star in LevelManager.Instance.Paragraphs.stars)
+        // {
+        //     if (star)
+        //         Destroy(star.gameObject);
+        // }
+        // if (LevelManager.Instance.level)
+        CheckLevelSuccess();
         TextManager.Instance.UpdateText();
         if (TextManager.Instance.currentTextIndex != 1 && TextManager.Instance.currentTextIndex % 2 == 0)
             LevelManager.Instance.level++;
     }
 
-    private void LevelSuccess()
+    private void CheckLevelSuccess()
     {
-        if (LevelManager.Instance.failedInputs > LevelManager.Instance.Paragraphs.sentences[LevelManager.Instance.level - 1].Length)
+        if (LevelManager.Instance.failedInputs > LevelManager.Instance.Paragraphs.sentences[LevelManager.Instance.level].Length)
         {
             GameManager.instance.indexOfDeath = LevelManager.Instance.level;
             SceneManager.LoadScene("DeathScreen");
-            Debug.Log("You failed loooser");
         }
     }
 }

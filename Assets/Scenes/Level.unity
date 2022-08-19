@@ -8349,11 +8349,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[0]
-      value: aa
+      value: salut
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[1]
-      value: bb
+      value: delaubeaucrepusculejemesensminusculesemblableauneparticulevidejesouhaitemeretrouveratraverscettelumierejemesensexister
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[2]
@@ -10787,6 +10787,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 180f34bdc740143f28be712af93907b8, type: 3}
+--- !u!1 &2130490838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2130490840}
+  - component: {fileID: 2130490839}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2130490839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130490838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88c192febaf5ecd4782817a6fb6d5dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexOfDeath: 0
+--- !u!4 &2130490840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130490838}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5330896, y: -4.0137215, z: -0.08618641}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2131975866
 GameObject:
   m_ObjectHideFlags: 0

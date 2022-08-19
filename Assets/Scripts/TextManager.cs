@@ -18,10 +18,11 @@ public class TextManager : MonoBehaviour
     private string[] _paragraphs = new[]
     {
         // "À l’aube du crépuscule,\nSommeille l’univers,\nVide, à la recherche de lumière,\nOu d’un unique corpuscule",
-        "aaa",
-        "bbb",
-        "c",
-        "d"
+        "aa",
+        "bb",
+        // "ccc",
+        // "ddd",
+        ""
         // "Un monde sombre,\nC’est dans celui-ci que je vis,\nMais un jour l’on ma dit,\nQue quelqu’un me sortirait de l’ombre",
         // "D’attendre, fut une rude épreuve,\nTel l’arbre, je sentis des racines pousser,\nLes jours, les mois, les années, ne voulurent passer,\nJ’étais à court d’idées neuves"
     };

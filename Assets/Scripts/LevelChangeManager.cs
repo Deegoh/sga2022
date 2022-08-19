@@ -19,6 +19,11 @@ public class LevelChangeManager : MonoBehaviour
     }
     public void ChangeLevelHandler()
     {
+        foreach (var star in LevelManager.Instance.Paragraphs.stars)
+        {
+            if (star)
+                Destroy(star.gameObject);
+        }
         if (LevelManager.Instance.level != 0)
             LevelSuccess();
         TextManager.Instance.UpdateText();

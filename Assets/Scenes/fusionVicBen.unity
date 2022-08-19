@@ -8057,23 +8057,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[0]
-      value: aaa
+      value: aa
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[1]
-      value: bbb
+      value: bb
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[2]
-      value: ccc
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[3]
-      value: ddd
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
+      propertyPath: sentences.sentences.Array.data[4]
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8519218426492364824, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: m_RootOrder

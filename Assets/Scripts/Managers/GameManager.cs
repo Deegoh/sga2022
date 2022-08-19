@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
-	public AudioSource sfx;
 
 	private void Awake()
 	{
-		Cursor.visible = false; 
-		Cursor.lockState = CursorLockMode.Locked;
+		// Cursor.visible = false; 
+		// Cursor.lockState = CursorLockMode.Locked;
 		if (!instance)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -27,7 +26,7 @@ public class GameManager : MonoBehaviour
 	public void StartGame()
 	{
 		Debug.Log("start");
-		SceneManager.LoadScene("Ben");
+		SceneManager.LoadScene("Level");
 	}
 	
 	public void ShowCredits()
@@ -45,11 +44,6 @@ public class GameManager : MonoBehaviour
 	public void ReturnMainMenu()
 	{
 		Debug.Log("mainMenu");
-		// SceneManager.LoadScene("MainMenu");
-	}
-	
-	public void PlaySfx()
-	{
-		sfx.Play();
+		SceneManager.LoadScene("MainMenu");
 	}
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,7 +12,12 @@ public class MenuManager : MonoBehaviour
 	[SerializeField] private Button _startButton;
 	[SerializeField] private Button _creditButton;
 	[SerializeField] private Button _quitButton;
-	[Header("Sound")]
+	[SerializeField] private TextMeshProUGUI _start;
+	[SerializeField] private TextMeshProUGUI _credit;
+	[SerializeField] private TextMeshProUGUI _quit;
+	[SerializeField] private Animator startAnimation;
+
+		[Header("Sound")]
 	public AudioSource sfxSource;
 	public AudioClip sfxButton;
 	private GameObject _lastselect;
@@ -26,12 +32,14 @@ public class MenuManager : MonoBehaviour
 
 	private void Update()
 	{
+		// _start.color = Color.white;
 		if (!EventSystem.current.currentSelectedGameObject)
 		{
 			EventSystem.current.SetSelectedGameObject(_lastselect);
 		}
 		else
 		{
+			// _lastselect.GetComponentInChildren<TextMeshProUGUI>().color = new Color(255, 215, 0);
 			_lastselect = EventSystem.current.currentSelectedGameObject;
 		}
 	}
@@ -50,8 +58,15 @@ public class MenuManager : MonoBehaviour
 	}
 	public void StartGame()
 	{
-		StartCoroutine(sfxPlay());
+		// StartCoroutine(sfxPlay());
+		startAnimation.SetBool("started", true);
+		StartCoroutine(waitForStartingAnimation());
 		GameManager.instance.StartGame();
+	}
+	
+	IEnumerator waitForStartingAnimation()
+	{
+		yield return new WaitForSeconds(5);
 	}
 
 	public void CreditGame()

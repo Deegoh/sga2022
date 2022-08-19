@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelChangeManager : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class LevelChangeManager : MonoBehaviour
     {
         if (LevelManager.Instance.failedInputs > LevelManager.Instance.Paragraphs.sentences[LevelManager.Instance.level - 1].Length)
         {
+            GameManager.instance.indexOfDeath = LevelManager.Instance.level;
+            SceneManager.LoadScene("DeathScreen");
             Debug.Log("You failed loooser");
         }
     }

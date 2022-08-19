@@ -2683,6 +2683,7 @@ GameObject:
   - component: {fileID: 2131975869}
   - component: {fileID: 2131975868}
   - component: {fileID: 2131975867}
+  - component: {fileID: 2131975871}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2773,3 +2774,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2131975871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131975866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1499f6df68116524ca87a91ebe3c393c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textOutput: {fileID: 1288801902}
+  DeathText:
+  - Ne  pouvant  faire  le  poid,\nJe  ne  pu  pretendre  parmis  les  miens,\nNaine 
+    brune  je  devins,\nErrante  dans  l'univers,  comme  il  se  doit.
+  - 'Mega Chad 2 '
+  - Mega Chad 3
+  - Mega Chad 4

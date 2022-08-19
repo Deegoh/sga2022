@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Threading;
 using UnityEngine;
+
 public class LevelManager : MonoBehaviour
 {
-
     public static LevelManager Instance;
 
     public Dictionary<char, int> Alphabet = new();
-    [Header("Sentences")]
-    [SerializeField] private Sentences sentences;
+    [Header("Sentences")] [SerializeField] private Sentences sentences;
     [SerializeField] private GameObject prefabParticles;
     public int failedInputs;
 
-    [Header("Sprites for Stars")]
-    public char letter;
+    [Header("Sprites for Stars")] public char letter;
     [SerializeField] public List<Sprite> starSprites;
-    
+
     public enum GameState
     {
         Level1,
@@ -35,31 +33,63 @@ public class LevelManager : MonoBehaviour
         set => sentences = value;
     }
 
-    private void Update()
+    private void OnGUI()
     {
-        // Update is checking for user input and comparing the char with the paragraph
-        foreach (char c in Input.inputString)
+        Event e = Event.current;
+
+        string keyString = e.keyCode.ToString();
+
+        //Check the type of the current event, making sure to take in only the KeyDown of the keystroke.
+        //char.IsLetter to filter out all other KeyCodes besides alphabetical.
+        bool isAlphabeticalChar = e.type == EventType.KeyDown && keyString.Length == 1 && char.IsLetter(keyString[0]);
+        if (!isAlphabeticalChar)
+            return;
+        // This is your desired action
+        char c = keyString.ToLower()[0];
+        Debug.Log("Detected key code: " + e.keyCode);
+        
+        foreach (IAStars star in Paragraphs.stars)
         {
-            foreach (var star in Paragraphs.stars)
+            if (char.ToLower(star.personalLetter) == c)
             {
-                if (Char.ToLower(star.personalLetter) == c)
-                {
-                    TextManager.Instance.OnCorrectLetter(c);
-                    Instantiate(prefabParticles, star.transform.position, Quaternion.identity);
-                    Paragraphs.stars.Remove(star);
-                    Instance.Paragraphs.removeChar(Instance.letter);
-                    Destroy(star.gameObject);
-                    return;
-                }
-                else
-                {
-                    failedInputs++;
-                    Thread.Sleep(100);
-                    Debug.Log("The number of failed inputs: " + failedInputs);
-                }
+                TextManager.Instance.OnCorrectLetter(c);
+                Instantiate(prefabParticles, star.transform.position, Quaternion.identity);
+                Paragraphs.stars.Remove(star);
+                Instance.Paragraphs.removeChar(Instance.letter);
+                Destroy(star.gameObject);
+                return;
             }
+
+            failedInputs++;
+            Debug.Log("The number of failed inputs: " + failedInputs);
         }
     }
+
+    // private void Update()
+    // {
+    //     // Update is checking for user input and comparing the char with the paragraph
+    //     foreach (char c in Input.inputString)
+    //     {
+    //         foreach (var star in Paragraphs.stars)
+    //         {
+    //             if (Char.ToLower(star.personalLetter) == c)
+    //             {
+    //                 TextManager.Instance.OnCorrectLetter(c);
+    //                 Instantiate(prefabParticles, star.transform.position, Quaternion.identity);
+    //                 Paragraphs.stars.Remove(star);
+    //                 Instance.Paragraphs.removeChar(Instance.letter);
+    //                 Destroy(star.gameObject);
+    //                 return;
+    //             }
+    //             else
+    //             {
+    //                 failedInputs++;
+    //                 Thread.Sleep(100);
+    //                 Debug.Log("The number of failed inputs: " + failedInputs);
+    //             }
+    //         }
+    //     }
+    // }
 
     private void Awake()
     {

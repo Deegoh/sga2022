@@ -1298,15 +1298,72 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Createur.ice.s   de   StarTales\nNadia   Chennaf\nTiago   Pinto   Monteiro\nKenneth  
-    Rioja\nBenjamin   Vermot\nVictor   Vermot\n\n\n\n\nR\xE9alis\xE9 dans le cadre
-    de la Swiss Game Academy 2022\n\n\nMusiques\nJP Soundworks - Town Music 2\n(https://www.youtube.com/c/JPSoundworks/)\n\nShadyDave
-    - Small Adventurers (music loop)\n(http://freesound.org/)\n\nJoseph Sardin -
-    Insectes nocturne 4 (http://lasonotheque.org/)\n\nMayra - Free Ambient Music
-    (Loop) (http://mayragandra.itch.io/)\n\n\n\nSFX\nAndyman404 - Typist Sound (https://andyman404.itch.io/)\n\nFoolBoyMedia
-    - Complete Chime (http://freesound.org/)\n\npinto0lucas - bubble low (http://freesound.org/)\n\npinto0lucas
-    - bubble medium (http://freesound.org/)\n\n\n\nUI / Font\nPizzadude - Arcade
-    Classic (http://pizzadude.dk/)"
+  m_text: 'Createur.ice.s   de   StarTales
+
+    Nadia   Chennaf
+
+    Tiago   Pinto  
+    Monteiro
+
+    Kenneth   Rioja
+
+    Benjamin   Vermot
+
+    Victor   Vermot
+
+
+
+    Realise
+    dans le cadre de la Swiss Game Academy 2022
+
+
+
+    Musiques
+
+    JP Soundworks
+    - Town Music 2
+
+    (https://www.youtube.com/c/JPSoundworks/)
+
+
+    ShadyDave
+    - Small Adventurers (music loop)
+
+    (http://freesound.org/)
+
+
+    Joseph Sardin
+    - Insectes nocturne 4 (http://lasonotheque.org/)
+
+
+    Mayra - Free Ambient Music
+    (Loop) (http://mayragandra.itch.io/)
+
+
+
+
+    SFX
+
+    Andyman404 - Typist Sound
+    (https://andyman404.itch.io/)
+
+
+    FoolBoyMedia - Complete Chime (http://freesound.org/)
+
+
+    pinto0lucas
+    - bubble low (http://freesound.org/)
+
+
+    pinto0lucas - bubble medium (http://freesound.org/)
+
+
+
+
+    UI
+    / Font
+
+    Pizzadude - Arcade Classic (http://pizzadude.dk/)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}
   m_sharedMaterial: {fileID: -7403601478363161520, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}

@@ -15,12 +15,12 @@ public class MenuManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _start;
 	[SerializeField] private TextMeshProUGUI _credit;
 	[SerializeField] private TextMeshProUGUI _quit;
-	[SerializeField] private Animator startAnimation;
-
-		[Header("Sound")]
+	[Header("Sound")]
 	public AudioSource sfxSource;
 	public AudioClip sfxButton;
 	private GameObject _lastselect;
+	[Header("Animator")]
+	[SerializeField] private Animator startAnimation;
 
 	private void Start()
 	{
@@ -32,15 +32,28 @@ public class MenuManager : MonoBehaviour
 
 	private void Update()
 	{
-		// _start.color = Color.white;
 		if (!EventSystem.current.currentSelectedGameObject)
 		{
 			EventSystem.current.SetSelectedGameObject(_lastselect);
 		}
 		else
 		{
-			// _lastselect.GetComponentInChildren<TextMeshProUGUI>().color = new Color(255, 215, 0);
 			_lastselect = EventSystem.current.currentSelectedGameObject;
+		}
+		_start.color = new Color(0, 242, 255);
+		_credit.color = new Color(0, 242, 255);
+		_quit.color = new Color(0, 242, 255);
+		switch (_lastselect.name)
+		{
+			case "StartButton":
+				_start.color = new Color(255, 215, 0);
+				break;
+			case "CreditButton":
+				_credit.color = new Color(255, 215, 0);
+				break;
+			case "EndButton":
+				_quit.color = new Color(255, 215, 0);
+				break;
 		}
 	}
 
@@ -58,15 +71,15 @@ public class MenuManager : MonoBehaviour
 	}
 	public void StartGame()
 	{
-		// StartCoroutine(sfxPlay());
+		StartCoroutine(sfxPlay());
 		startAnimation.SetBool("started", true);
 		StartCoroutine(waitForStartingAnimation());
-		GameManager.instance.StartGame();
 	}
 	
 	IEnumerator waitForStartingAnimation()
 	{
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(3.2f);
+		GameManager.instance.StartGame();
 	}
 
 	public void CreditGame()

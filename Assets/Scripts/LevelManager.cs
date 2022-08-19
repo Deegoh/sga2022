@@ -44,10 +44,13 @@ public class LevelManager : MonoBehaviour
         bool isAlphabeticalChar = e.type == EventType.KeyDown && keyString.Length == 1 && char.IsLetter(keyString[0]);
         if (!isAlphabeticalChar)
             return;
-        // This is your desired action
         char c = keyString.ToLower()[0];
-        Debug.Log("Detected key code: " + e.keyCode);
-        
+        int oldInput = failedInputs;
+        List<char> letters = new List<char>();
+        foreach (IAStars star in Paragraphs.stars)
+        {
+            letters.Add(char.ToLower(star.personalLetter));
+        }
         foreach (IAStars star in Paragraphs.stars)
         {
             if (char.ToLower(star.personalLetter) == c)
@@ -55,13 +58,17 @@ public class LevelManager : MonoBehaviour
                 TextManager.Instance.OnCorrectLetter(c);
                 Instantiate(prefabParticles, star.transform.position, Quaternion.identity);
                 Paragraphs.stars.Remove(star);
-                Instance.Paragraphs.removeChar(Instance.letter);
-                Destroy(star.gameObject);
-                return;
+                Instance.Paragraphs.removeChar(c);
+                if (star)
+                    Destroy(star.gameObject);
+                break;
             }
-
-            failedInputs++;
-            Debug.Log("The number of failed inputs: " + failedInputs);
+            else if (!letters.Contains(c))
+            {
+                if (failedInputs == oldInput)
+                    failedInputs++;
+                // Debug.Log("The number of failed inputs: " + failedInputs);
+            }
         }
     }
 

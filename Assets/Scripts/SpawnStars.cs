@@ -30,7 +30,6 @@ public class SpawnStars : MonoBehaviour
             _center = transform.position;
             LevelManager.Instance.letter = LevelManager.Instance.Paragraphs.choseRandomChar();
             int value;
-            Debug.Log("I come here");
             char chosenLetter = LevelManager.Instance.letter;
             LevelManager.Instance.Alphabet.TryGetValue(chosenLetter.ToString().ToLower()[0], out value);
             SpriteRenderer[] childList = prefabStar.GetComponentsInChildren<SpriteRenderer>();

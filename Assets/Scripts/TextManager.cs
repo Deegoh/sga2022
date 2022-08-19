@@ -18,11 +18,12 @@ public class TextManager : MonoBehaviour
     private string[] _paragraphs = new[]
     {
         // "À l’aube du crépuscule,\nSommeille l’univers,\nVide, à la recherche de lumière,\nOu d’un unique corpuscule",
-        "aa",
-        "bb",
+        // "au berceau de l’univers,\nou l’air froid du neant est à glacer le sang,\nj’erre, à la recherche d’un sens,\nsans empreinte, sans repere.",
+        "salut",
+        "de l’aube au crepuscule,\nje me sens minuscule, semblable a une particule,\nvide, je souhaite me retrouver,\na travers cette lumiere, je me sens exister.",
+        // "bb"
         // "ccc",
         // "ddd",
-        ""
         // "Un monde sombre,\nC’est dans celui-ci que je vis,\nMais un jour l’on ma dit,\nQue quelqu’un me sortirait de l’ombre",
         // "D’attendre, fut une rude épreuve,\nTel l’arbre, je sentis des racines pousser,\nLes jours, les mois, les années, ne voulurent passer,\nJ’étais à court d’idées neuves"
     };
@@ -79,8 +80,8 @@ public class TextManager : MonoBehaviour
         int i = 0;
         
         i = _remainingLetters[currentTextIndex].IndexOf(letter);
-  
-        _remainingLetters[currentTextIndex] = _remainingLetters[currentTextIndex].Remove(i, 1).Insert(i, "*");
+        if (i != -1)
+            _remainingLetters[currentTextIndex] = _remainingLetters[currentTextIndex].Remove(i, 1).Insert(i, "*");
     }
 
     private void Awake()

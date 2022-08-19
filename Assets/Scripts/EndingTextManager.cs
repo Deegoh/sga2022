@@ -55,11 +55,14 @@ public class EndingTextManager : MonoBehaviour
 	
 	public void MenuGame()
 	{
+		SoundTracker.instance.PlayBgAmbient();
 		GameManager.instance.ReturnMainMenu();
 	}
 	
 	public void ReplayGame()
 	{
+		SoundTracker.instance.PlayBgAmbient();
+		SoundTracker.instance.PlayBgShady();
 		GameManager.instance.StartGame();
 	}
 }

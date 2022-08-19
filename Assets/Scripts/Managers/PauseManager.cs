@@ -72,6 +72,7 @@ public class PauseManager : MonoBehaviour
 		}
 		else
 		{
+			SoundTracker.instance.PlayMenu();
 			Time.timeScale = 0f;
 			_pauseMenu.enabled = true;
 		}

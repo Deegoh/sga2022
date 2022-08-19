@@ -43,8 +43,18 @@ public class CreditMenu : MonoBehaviour
 		_returnButton.onClick.RemoveListener(ReturnGame);
 	}
 
+	IEnumerator ReturnMainMenu()
+	{
+		SoundTracker.instance.PlayTypebell();
+		while (SoundTracker.instance.sfxSource[0].isPlaying)
+		{
+			yield return null;
+		}
+		GameManager.instance.ReturnMainMenu();
+	}
+
 	void ReturnGame()
 	{
-		GameManager.instance.ReturnMainMenu();
+		StartCoroutine(ReturnMainMenu());
 	}
 }

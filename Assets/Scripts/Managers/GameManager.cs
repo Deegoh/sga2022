@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-		// Cursor.visible = false; 
-		// Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false; 
+		Cursor.lockState = CursorLockMode.Locked;
 		if (!instance)
 		{
 			DontDestroyOnLoad(gameObject);
@@ -26,25 +26,21 @@ public class GameManager : MonoBehaviour
 
 	public void StartGame()
 	{
-		Debug.Log("start");
 		SceneManager.LoadScene("Level");
 	}
 	
 	public void ShowCredits()
 	{
-		Debug.Log("credit");
-		// SceneManager.LoadScene("Game");
+		SceneManager.LoadScene("Credit");
 	}
 
 	public void QuitGame()
 	{
-		Debug.Log("quit");
 		Application.Quit();
 	}
 
 	public void ReturnMainMenu()
 	{
-		Debug.Log("mainMenu");
 		SceneManager.LoadScene("MainMenu");
 	}
 }

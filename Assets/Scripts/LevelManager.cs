@@ -61,6 +61,7 @@ public class LevelManager : MonoBehaviour
                 Instance.Paragraphs.removeChar(c);
                 if (star)
                     Destroy(star.gameObject);
+                SoundTracker.instance.PlayType();
                 break;
             }
             else if (!letters.Contains(c))

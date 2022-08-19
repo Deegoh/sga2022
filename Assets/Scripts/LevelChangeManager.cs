@@ -33,10 +33,4 @@ public class LevelChangeManager : MonoBehaviour
             Debug.Log("You failed loooser");
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -74,8 +74,6 @@ public class LevelChangeManager : MonoBehaviour
         if (LevelManager.Instance.failedInputs > 10)
         {
             GameManager.instance.indexOfDeath = LevelManager.Instance.level;
-            // SoundTracker.instance.PlayBgShady();
-            // SoundTracker.instance.PlayBgAmbient();
             StartCoroutine(waitForFade());
 
         }

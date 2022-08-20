@@ -2,16 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelChangeManager : MonoBehaviour
 {
     public static LevelChangeManager Instance;
-    [SerializeField] private GameObject spawner;
+    [SerializeField] private Animator fadeIn;
 
-    [SerializeField]
-    private GameObject _camera;
 
     public struct EvolvingElements
     {
@@ -35,16 +34,16 @@ public class LevelChangeManager : MonoBehaviour
         TextManager.Instance.UpdateText();
         if (TextManager.Instance.currentTextIndex != 1 && TextManager.Instance.currentTextIndex % 2 == 0)
             LevelManager.Instance.level++;
-        if (isItTheEnd())
-        {
-            _camera.GetComponent<FollowPlayer>().Stop();
-            Destroy(spawner);
-            foreach (var star in LevelManager.Instance.Paragraphs.stars)
-            {
-                Destroy(star.gameObject);
-            }
-            Debug.Log("C la fin!");
-        }
+        // if (isItTheEnd())
+        // {
+        //     _camera.GetComponent<FollowPlayer>().Stop();
+        //     Destroy(spawner);
+        //     foreach (var star in LevelManager.Instance.Paragraphs.stars)
+        //     {
+        //         Destroy(star.gameObject);
+        //     }
+        //     Debug.Log("C la fin!");
+        // }
         //else
         //{
             //for (int i = 0; i < LevelManager.Instance.Paragraphs.stars.Count - 1; i++)
@@ -75,9 +74,16 @@ public class LevelChangeManager : MonoBehaviour
         if (LevelManager.Instance.failedInputs > 10)
         {
             GameManager.instance.indexOfDeath = LevelManager.Instance.level;
-            SoundTracker.instance.PlayBgShady();
-            SoundTracker.instance.PlayBgAmbient();
-            SceneManager.LoadScene("DeathScreen");
+            // SoundTracker.instance.PlayBgShady();
+            // SoundTracker.instance.PlayBgAmbient();
+            StartCoroutine(waitForFade());
         }
+    }
+
+    IEnumerator waitForFade()
+    {
+        fadeIn.SetTrigger("fadeIn 0");
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("DeathScreen");
     }
 }

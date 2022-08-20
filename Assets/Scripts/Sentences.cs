@@ -8,9 +8,9 @@ using Random = UnityEngine.Random;
 [Serializable]
 public class Sentences
 {
-    public List<string> sentences = new List<string> {"lorem", "opsum"};
+    public List<string> sentences;
     private int _i = 0;
-    public List<IAStars> stars = new List<IAStars>(0);
+    public List<IAStars> stars;
 
     public string CurrentSentence => sentences[_i];
 
@@ -26,6 +26,7 @@ public class Sentences
         if (index != -1)
         {
             sentences[_i] = sentences[_i].Remove(index, 1);
+            Debug.Log("The current sentence is: " + sentences[_i]);
             if (String.IsNullOrEmpty(sentences[_i]))
             {
                 _i++;

@@ -94,9 +94,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1023131411925894995}
   - component: {fileID: 948834883074413885}
+  - component: {fileID: -6968109659776551670}
+  - component: {fileID: -5840059355286636882}
   m_Layer: 0
   m_Name: Lettre_Parent
-  m_TagString: Untagged
+  m_TagString: Star
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +135,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 0
   personalLetter: 0
+--- !u!136 &-6968109659776551670
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023131411925894996}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &-5840059355286636882
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023131411925894996}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1023131411972684239
 GameObject:
   m_ObjectHideFlags: 0
@@ -290,7 +322,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2056448, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
+  m_Sprite: {fileID: 1685259100, guid: 2cbc75985a2114e0d8167b378dbfff12, type: 3}
   m_Color: {r: 0.86274517, g: 0.68235296, b: 0.1137255, a: 1}
   m_FlipX: 0
   m_FlipY: 0

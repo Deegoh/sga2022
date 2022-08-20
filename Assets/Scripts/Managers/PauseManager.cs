@@ -22,17 +22,12 @@ public class PauseManager : MonoBehaviour
 	{
 		_playButton.onClick.AddListener(PlayGame);
 		_quitButton.onClick.AddListener(QuitGame);
-		_pauseMenu.GetComponent<Canvas>();
 		_pauseMenu.enabled = false;
-		_lastselect = _pauseMenu.GetComponent<GameObject>();
+		// _lastselect = _pauseMenu.GetComponent<GameObject>();
 	}
 	
 	private void Update() 
 	{
-		if (Input.GetKeyUp(KeyCode.Escape)) 
-		{
-			PlayGame();
-		}
 		if (!EventSystem.current.currentSelectedGameObject)
 		{
 			EventSystem.current.SetSelectedGameObject(_lastselect);
@@ -40,6 +35,10 @@ public class PauseManager : MonoBehaviour
 		else
 		{
 			_lastselect = EventSystem.current.currentSelectedGameObject;
+		}
+		if (Input.GetKeyUp(KeyCode.Escape)) 
+		{
+			PlayGame();
 		}
 		_play.color = new Color(0, 242, 255);
 		_quit.color = new Color(0, 242, 255);

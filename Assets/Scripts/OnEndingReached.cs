@@ -27,6 +27,7 @@ public class OnEndingReached : MonoBehaviour
     {
         fadeIn.SetTrigger("fadeIn 0");
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("DeathScreen");
+        GameManager.instance.ending = true;
+        GameManager.instance.StoryScreen();
     }
 }

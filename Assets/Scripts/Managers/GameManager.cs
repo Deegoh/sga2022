@@ -49,4 +49,9 @@ public class GameManager : MonoBehaviour
 	{
 		SceneManager.LoadScene("DeathScreen");
 	}
+	
+	public void StoryScreen()
+	{
+		SceneManager.LoadScene("StoryScreen");
+	}
 }

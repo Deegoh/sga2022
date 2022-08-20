@@ -25,6 +25,7 @@ public class EndingTextManager : MonoBehaviour
 		if (GameManager.instance.ending)
 		{
 			finA.SetActive(true);
+			GameManager.instance.ending = false;
 		}
 		else
 		{

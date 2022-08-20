@@ -77,6 +77,7 @@ public class LevelChangeManager : MonoBehaviour
             // SoundTracker.instance.PlayBgShady();
             // SoundTracker.instance.PlayBgAmbient();
             StartCoroutine(waitForFade());
+
         }
     }
 
@@ -84,6 +85,8 @@ public class LevelChangeManager : MonoBehaviour
     {
         fadeIn.SetTrigger("fadeIn 0");
         yield return new WaitForSeconds(4f);
-        SceneManager.LoadScene("DeathScreen");
+        SoundTracker.instance.PlayBgShady();
+        SoundTracker.instance.PlayBgAmbient();
+        GameManager.instance.StoryScreen();
     }
 }

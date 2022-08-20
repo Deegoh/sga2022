@@ -31,23 +31,24 @@ public class EndingTextManager : MonoBehaviour
 		{
 			finB.SetActive(true);
 		}
+		EventSystem.current.firstSelectedGameObject = _replayButton.gameObject;
 	}
 
 	private void Update()
 	{
-		if (!EventSystem.current.currentSelectedGameObject)
-		{
-			EventSystem.current.SetSelectedGameObject(_lastselect);
-		}
-		else
-		{
-			_lastselect = EventSystem.current.currentSelectedGameObject;
-		}
+		// if (!EventSystem.current.currentSelectedGameObject)
+		// {
+		// 	EventSystem.current.SetSelectedGameObject(_lastselect);
+		// }
+		// else
+		// {
+		// 	_lastselect = EventSystem.current.currentSelectedGameObject;
+		// }
 		_replay.color = new Color(0, 242, 255);
 		_mainMenu.color = new Color(0, 242, 255);
-		switch (_lastselect.name)
+		switch (EventSystem.current.currentSelectedGameObject.name)
 		{
-			case "Reesayer":
+			case "Reessayer":
 				_replay.color = new Color(255, 215, 0);
 				break;
 			case "Menu":

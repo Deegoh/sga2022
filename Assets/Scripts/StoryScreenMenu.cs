@@ -15,20 +15,21 @@ public class StoryScreenMenu : MonoBehaviour
     void Start()
     {
         _suivantButton.onClick.AddListener(Next);
+        EventSystem.current.firstSelectedGameObject = _suivantButton.gameObject;
     }
 
 	private void Update()
 	{
-		if (!EventSystem.current.currentSelectedGameObject)
-		{
-			EventSystem.current.SetSelectedGameObject(_lastselect);
-		}
-		else
-		{
-			_lastselect = EventSystem.current.currentSelectedGameObject;
-		}
-		_suivant.color = new Color(0, 242, 255);
-		switch (_lastselect.name)
+		// if (!EventSystem.current.currentSelectedGameObject)
+		// {
+		// 	EventSystem.current.SetSelectedGameObject(_lastselect);
+		// }
+		// else
+		// {
+		// 	_lastselect = EventSystem.current.currentSelectedGameObject;
+		// }
+		// _suivant.color = new Color(0, 242, 255);
+		switch (EventSystem.current.currentSelectedGameObject.name)
 		{
 			case "Suivant":
 				_suivant.color = new Color(255, 215, 0);

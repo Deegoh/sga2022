@@ -23,26 +23,28 @@ public class PauseManager : MonoBehaviour
 		_playButton.onClick.AddListener(PlayGame);
 		_quitButton.onClick.AddListener(QuitGame);
 		_pauseMenu.enabled = false;
+		EventSystem.current.firstSelectedGameObject = _playButton.gameObject;
 		// _lastselect = _pauseMenu.GetComponent<GameObject>();
 	}
 	
 	private void Update() 
 	{
-		if (!EventSystem.current.currentSelectedGameObject)
-		{
-			EventSystem.current.SetSelectedGameObject(_lastselect);
-		}
-		else
-		{
-			_lastselect = EventSystem.current.currentSelectedGameObject;
-		}
+		// if (!EventSystem.current.currentSelectedGameObject)
+		// {
+		// 	EventSystem.current.SetSelectedGameObject(_lastselect);
+		// }
+		// else
+		// {
+		// 	_lastselect = EventSystem.current.currentSelectedGameObject;
+		// }
 		if (Input.GetKeyUp(KeyCode.Escape)) 
 		{
 			PlayGame();
 		}
 		_play.color = new Color(0, 242, 255);
 		_quit.color = new Color(0, 242, 255);
-		switch (_lastselect.name)
+		
+		switch (EventSystem.current.currentSelectedGameObject.name)
 		{
 			case "Continuer":
 				_play.color = new Color(255, 215, 0);

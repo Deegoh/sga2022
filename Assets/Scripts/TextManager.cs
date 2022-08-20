@@ -47,7 +47,8 @@ public class TextManager : MonoBehaviour
 
     private void SetParagraphs()
     {
-        _s = File.ReadAllText("Assets/Text/wordsOnly.txt"); // read .txt to string
+        // _s = File.ReadAllText("Assets/Text/wordsOnly.txt"); // read .txt to string
+        _s = "univers\nneant\nrecherche\nrepere\ncrepuscule\nminuscule\nvide\nexister";
         _l = new List<string>(_s.Split('\n')); // string to list
 
         _r = new List<string>(_l); // create remainingLetters

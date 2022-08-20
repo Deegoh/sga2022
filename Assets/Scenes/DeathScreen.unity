@@ -884,7 +884,7 @@ GameObject:
   - component: {fileID: 535544710}
   - component: {fileID: 535544709}
   m_Layer: 5
-  m_Name: Reesayer
+  m_Name: Reessayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1885,7 +1885,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: reesayer
+  m_text: reessayer
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}
   m_sharedMaterial: {fileID: -7403601478363161520, guid: 00cbcca8e2cc34a69a4d99f39560eb7f, type: 2}

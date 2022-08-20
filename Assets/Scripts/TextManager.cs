@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Mime;
 using TMPro;
 using UnityEngine;
@@ -20,7 +21,8 @@ public class TextManager : MonoBehaviour
         // "À l’aube du crépuscule,\nSommeille l’univers,\nVide, à la recherche de lumière,\nOu d’un unique corpuscule",
         // "au berceau de l’univers,\nou l’air froid du neant est à glacer le sang,\nj’erre, à la recherche d’un sens,\nsans empreinte, sans repere.",
         "salut",
-        "de l’aube au crepuscule,\nje me sens minuscule, semblable a une particule,\nvide, je souhaite me retrouver,\na travers cette lumiere, je me sens exister.",
+        "coucou !mec, ",
+        ""
         // "bb"
         // "ccc",
         // "ddd",
@@ -37,7 +39,10 @@ public class TextManager : MonoBehaviour
     public void UpdateText()
     {
         Debug.Log("GIGA CHAD LOL");
+        //if (LevelManager.Instance.Paragraphs.sentences) 
         textOutput.text = _paragraphs[++currentTextIndex];
+        //else
+          //  textOutput.text = "";
     }
 
     public void OnCorrectLetter(char letter)

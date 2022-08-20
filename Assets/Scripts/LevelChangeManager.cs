@@ -1,13 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelChangeManager : MonoBehaviour
 {
     public static LevelChangeManager Instance;
-    
+    [SerializeField] private GameObject spawner;
+
+    [SerializeField]
+    private GameObject _camera;
+
     public struct EvolvingElements
     {
         
@@ -30,13 +35,48 @@ public class LevelChangeManager : MonoBehaviour
         TextManager.Instance.UpdateText();
         if (TextManager.Instance.currentTextIndex != 1 && TextManager.Instance.currentTextIndex % 2 == 0)
             LevelManager.Instance.level++;
+        if (isItTheEnd())
+        {
+            _camera.GetComponent<FollowPlayer>().Stop();
+            Destroy(spawner);
+            foreach (var star in LevelManager.Instance.Paragraphs.stars)
+            {
+                Destroy(star.gameObject);
+            }
+            Debug.Log("C la fin!");
+        }
+        //else
+        //{
+            //for (int i = 0; i < LevelManager.Instance.Paragraphs.stars.Count - 1; i++)
+            //{
+              //  LevelManager.Instance.Paragraphs.stars.Remove(LevelManager.Instance.Paragraphs.stars[i]);
+                //Destroy(LevelManager.Instance.Paragraphs.stars[i].gameObject);
+            //}
+            //foreach (var star in LevelManager.Instance.Paragraphs.stars)
+            //{
+             //   Destroy(star.gameObject);
+            //    LevelManager.Instance.Paragraphs.stars.Remove(star);
+            //}
+        //}
+    }
+
+    private bool isItTheEnd()
+    {
+        foreach (var sentence in LevelManager.Instance.Paragraphs.sentences)
+        {
+            if (sentence.Length != 0)
+                return false;
+        }
+        return true;
     }
 
     private void CheckLevelSuccess()
     {
-        if (LevelManager.Instance.failedInputs > LevelManager.Instance.Paragraphs.sentences[LevelManager.Instance.level].Length)
+        if (LevelManager.Instance.failedInputs > 10)
         {
             GameManager.instance.indexOfDeath = LevelManager.Instance.level;
+            SoundTracker.instance.PlayBgShady();
+            SoundTracker.instance.PlayBgAmbient();
             SceneManager.LoadScene("DeathScreen");
         }
     }

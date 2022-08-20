@@ -14,7 +14,8 @@ public class PauseManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _play;
 	[SerializeField] private TextMeshProUGUI _quit;
 	[SerializeField] private Canvas _pauseMenu;
-	private bool _isPause;
+	public static PauseManager Instance;
+	public bool _isPause;
 	private GameObject _lastselect;
 
 	private void Start()
@@ -23,6 +24,7 @@ public class PauseManager : MonoBehaviour
 		_quitButton.onClick.AddListener(QuitGame);
 		_pauseMenu.GetComponent<Canvas>();
 		_pauseMenu.enabled = false;
+		_lastselect = _pauseMenu.GetComponent<GameObject>();
 	}
 	
 	private void Update() 
@@ -63,6 +65,18 @@ public class PauseManager : MonoBehaviour
 		GameManager.instance.QuitGame();
 	}
 
+	private void Awake()
+	{
+		if (!Instance)
+		{
+			Instance = this;
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+	}
+
 	public void PlayGame()
 	{
 		if (_isPause)
@@ -72,6 +86,7 @@ public class PauseManager : MonoBehaviour
 		}
 		else
 		{
+			SoundTracker.instance.PlayMenu();
 			Time.timeScale = 0f;
 			_pauseMenu.enabled = true;
 		}

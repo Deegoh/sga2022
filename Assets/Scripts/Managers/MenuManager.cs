@@ -15,9 +15,6 @@ public class MenuManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _start;
 	[SerializeField] private TextMeshProUGUI _credit;
 	[SerializeField] private TextMeshProUGUI _quit;
-	[Header("Sound")]
-	public AudioSource sfxSource;
-	public AudioClip sfxButton;
 	private GameObject _lastselect;
 	[Header("Animator")]
 	[SerializeField] private Animator startAnimation;
@@ -27,7 +24,8 @@ public class MenuManager : MonoBehaviour
 		_startButton.onClick.AddListener(StartGame);
 		_creditButton.onClick.AddListener(CreditGame);
 		_quitButton.onClick.AddListener(QuitGame);
-		sfxSource.clip = sfxButton;
+		if (!SoundTracker.instance.bgSource[0].isPlaying)
+			SoundTracker.instance.PlayBgMenu();
 	}
 
 	private void Update()
@@ -64,33 +62,57 @@ public class MenuManager : MonoBehaviour
 		_quitButton.onClick.RemoveListener(QuitGame);
 	}
 
-	private IEnumerator sfxPlay()
+	IEnumerator Strat()
 	{
-		sfxSource.Play();
-		yield return new WaitForSeconds(sfxSource.clip.length);
-	}
-	public void StartGame()
-	{
-		StartCoroutine(sfxPlay());
-		startAnimation.SetBool("started", true);
-		StartCoroutine(waitForStartingAnimation());
+		SoundTracker.instance.PlayTypebell();
+		while (SoundTracker.instance.sfxSource[0].isPlaying)
+		{
+			yield return null;
+		}
+		SoundTracker.instance.PlayBgMenu();
+		SoundTracker.instance.PlayBgShady();
 	}
 	
+	private IEnumerator Credit()
+	{
+		SoundTracker.instance.PlayTypebell();
+		while (SoundTracker.instance.sfxSource[0].isPlaying)
+		{
+			yield return null;
+		}
+		GameManager.instance.ShowCredits();
+	}
+
+	private IEnumerator Quit()
+	{
+		SoundTracker.instance.PlayTypebell();
+		while (SoundTracker.instance.sfxSource[0].isPlaying)
+		{
+			yield return null;
+		}
+		GameManager.instance.QuitGame();
+	}
+
 	IEnumerator waitForStartingAnimation()
 	{
+		startAnimation.SetBool("started", true);
 		yield return new WaitForSeconds(4.5f);
 		GameManager.instance.StartGame();
 	}
 
+	public void StartGame()
+	{
+		StartCoroutine(Strat());
+		StartCoroutine(waitForStartingAnimation());
+	}
+
 	public void CreditGame()
 	{
-		StartCoroutine(sfxPlay());
-		GameManager.instance.ShowCredits();
+		StartCoroutine(Credit());
 	}
 
 	public void QuitGame()
 	{
-		StartCoroutine(sfxPlay());
-		GameManager.instance.QuitGame();
+		StartCoroutine(Quit());
 	}
 }

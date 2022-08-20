@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using System.IO;
+using System.Linq;
 using System.Text.RegularExpressions;
 using TMPro;
 using UnityEngine;
@@ -44,9 +45,9 @@ public class TextManager : MonoBehaviour
 
     private void SetParagraphs()
     {
-        _s = File.ReadAllText("Assets/Text/l1p1.txt"); // read .txt to string
+        _s = File.ReadAllText("Assets/Text/wordsOnly.txt"); // read .txt to string
         _l = new List<string>(_s.Split('\n')); // string to list
-        
+
         _r = new List<string>(_l); // create remainingLetters
         for (int i = 0; i < _r.Count; i++)
         {

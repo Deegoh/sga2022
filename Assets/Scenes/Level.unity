@@ -29365,7 +29365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1547076451}
-  playerSpeed: 1
+  playerSpeed: 1.5
   rb: {fileID: 1646027050}
 --- !u!54 &1646027050
 Rigidbody:

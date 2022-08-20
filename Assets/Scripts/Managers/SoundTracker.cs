@@ -61,6 +61,18 @@ public class SoundTracker : MonoBehaviour
 			bgSource[2].Stop();
 		}
 	}
+	
+	public void PlayBgInsect()
+	{
+		if (!bgSource[3].isPlaying)
+		{
+			bgSource[3].Play();
+		}
+		else
+		{
+			bgSource[3].Stop();
+		}
+	}
 
 	public void PlayTypebell()
 	{

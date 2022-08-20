@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2346445895333604574}
-  - component: {fileID: 5822847418645503655}
+  - component: {fileID: 1266266684}
   m_Layer: 0
   m_Name: BgInsect
   m_TagString: Untagged
@@ -160,7 +160,7 @@ Transform:
   m_Father: {fileID: 7436765919327997525}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &5822847418645503655
+--- !u!82 &1266266684
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,9 +170,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c2139ed981e3acc4c941b9cd5987201a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: af25e2d56cbb6fd4494def611b6b91d0, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.21
+  m_Volume: 0.03
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -697,6 +697,7 @@ MonoBehaviour:
   - {fileID: 7436765918745253572}
   - {fileID: 7436765920561635643}
   - {fileID: 8565741361467677190}
+  - {fileID: 1266266684}
   sfxSource:
   - {fileID: 7436765918837352423}
   - {fileID: 7436765920117135964}
@@ -747,7 +748,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ff57c9e694797db4983f01fe074095a3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -875,7 +876,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 89849c350f5ace54c88dc3704b4a7d64, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1003,7 +1004,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 366f8a40881de7d40adca5cca8c8b01e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -1,18 +1,32 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour {
 
     public Transform player;
-    [SerializeField] private float playerSpeed;
+    [SerializeField] public float playerSpeed;
 
     [SerializeField] private Rigidbody rb;
 
     private void Start()
     {
         rb.velocity = new Vector3(0,0,playerSpeed);
+    }
+    public void Stop()
+    {
+        rb.velocity = new Vector3(0,0,0);
+    }
+    
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Star")
+        {
+            LevelManager.Instance.Paragraphs.stars.Remove(other.GetComponent<IAStars>());
+            Destroy(other.gameObject);
+        }
     }
 
     // Update is called once per frame

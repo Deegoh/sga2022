@@ -627,7 +627,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 94e6ac90871c44347a86d4b0a8a4373a, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 94e6ac90871c44347a86d4b0a8a4373a, type: 3}
       propertyPath: m_LocalScale.x
@@ -957,6 +957,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3a6e55805ff814fc0873b743393dbced, type: 3}
   m_PrefabInstance: {fileID: 190375236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &225672679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8918780890725437919, guid: 21c99732c288c33438313f5c00dcb033, type: 3}
+  m_PrefabInstance: {fileID: 1118394408}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &258038380
 PrefabInstance:
@@ -1376,6 +1381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6faf7623f54dbca4e8422c865e857162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawner: {fileID: 225672679}
+  _camera: {fileID: 0}
 --- !u!4 &368222908
 Transform:
   m_ObjectHideFlags: 0
@@ -8353,7 +8360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[1]
-      value: delaubeaucrepusculejemesensminusculesemblableauneparticulevidejesouhaitemeretrouveratraverscettelumierejemesensexister
+      value: coucoumec
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[2]
@@ -10830,7 +10837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2131975866
 GameObject:

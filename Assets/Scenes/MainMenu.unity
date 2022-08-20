@@ -6863,8 +6863,6 @@ MonoBehaviour:
   _start: {fileID: 55612926}
   _credit: {fileID: 247179211}
   _quit: {fileID: 915486898}
-  sfxSource: {fileID: 1192816051}
-  sfxButton: {fileID: 8300000, guid: be5d7e11bbeb9414db1946a42fbb3ca5, type: 3}
   startAnimation: {fileID: 1902372718}
 --- !u!1 &1243798375
 GameObject:

@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Sprites for Stars")] public char letter;
     [SerializeField] public List<Sprite> starSprites;
+    [SerializeField] public Animator animator;
 
     public enum GameState
     {
@@ -66,6 +67,7 @@ public class LevelManager : MonoBehaviour
             }
             else if (!letters.Contains(c))
             {
+                animator.SetTrigger("isShaking");
                 if (failedInputs == oldInput)
                     failedInputs++;
                 // Debug.Log("The number of failed inputs: " + failedInputs);

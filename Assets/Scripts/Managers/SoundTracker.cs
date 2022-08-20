@@ -43,10 +43,12 @@ public class SoundTracker : MonoBehaviour
 		if (!bgSource[1].isPlaying)
 		{
 			bgSource[1].Play();
+			PlayBgInsect();
 		}
 		else
 		{
 			bgSource[1].Stop();
+			PlayBgInsect();
 		}
 	}
 

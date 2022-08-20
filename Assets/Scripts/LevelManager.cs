@@ -68,6 +68,7 @@ public class LevelManager : MonoBehaviour
             else if (!letters.Contains(c))
             {
                 animator.SetTrigger("isShaking");
+                SoundTracker.instance.PlayWrong();
                 if (failedInputs == oldInput)
                     failedInputs++;
                 // Debug.Log("The number of failed inputs: " + failedInputs);

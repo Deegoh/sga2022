@@ -112,4 +112,9 @@ public class SoundTracker : MonoBehaviour
 	{
 		sfxSource[4].Play();
 	}
+	
+	public void PlayWrong()
+	{
+		sfxSource[5].Play();
+	}
 }

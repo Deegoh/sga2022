@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
 	public static GameManager instance;
 	public int indexOfDeath;
+	public bool ending = false;
 
 	private void Awake()
 	{
@@ -42,5 +43,10 @@ public class GameManager : MonoBehaviour
 	public void ReturnMainMenu()
 	{
 		SceneManager.LoadScene("MainMenu");
+	}
+
+	public void DeathScreen()
+	{
+		SceneManager.LoadScene("DeathScreen");
 	}
 }

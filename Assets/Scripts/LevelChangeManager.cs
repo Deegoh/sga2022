@@ -75,8 +75,8 @@ public class LevelChangeManager : MonoBehaviour
         if (LevelManager.Instance.failedInputs > LevelManager.Instance.Paragraphs.sentences[LevelManager.Instance.level].Length)
         {
             GameManager.instance.indexOfDeath = LevelManager.Instance.level;
-            //SoundTracker.instance.PlayBgShady();
-            //SoundTracker.instance.PlayBgAmbient();
+            SoundTracker.instance.PlayBgShady();
+            SoundTracker.instance.PlayBgAmbient();
             SceneManager.LoadScene("DeathScreen");
         }
     }

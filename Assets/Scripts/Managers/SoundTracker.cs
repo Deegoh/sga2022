@@ -11,6 +11,7 @@ public class SoundTracker : MonoBehaviour
 	[Header("Sound")]
 	public AudioSource[] bgSource;
 	public AudioSource[] sfxSource;
+	private static int rand = 1;
 
 	void Awake()
 	{
@@ -68,7 +69,14 @@ public class SoundTracker : MonoBehaviour
 
 	public void PlayType()
 	{
-		sfxSource[Random.Range(1, 3)].Play();
+		int nextRand;
+		nextRand = Random.Range(1, 4);
+		while (nextRand == rand)
+		{
+			nextRand = Random.Range(1, 4);
+		}
+		rand = nextRand;
+		sfxSource[rand].Play();
 	}
 
 	public void PlayType1()

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Star
   - Letter
+  - End
   layers:
   - Default
   - TransparentFX

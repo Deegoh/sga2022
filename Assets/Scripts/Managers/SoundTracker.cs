@@ -43,10 +43,12 @@ public class SoundTracker : MonoBehaviour
 		if (!bgSource[1].isPlaying)
 		{
 			bgSource[1].Play();
+			bgSource[3].Play();
 		}
 		else
 		{
 			bgSource[1].Stop();
+			bgSource[3].Stop();
 		}
 	}
 
@@ -59,6 +61,18 @@ public class SoundTracker : MonoBehaviour
 		else
 		{
 			bgSource[2].Stop();
+		}
+	}
+	
+	public void PlayBgInsect()
+	{
+		if (!bgSource[3].isPlaying)
+		{
+			bgSource[3].Play();
+		}
+		else
+		{
+			bgSource[3].Stop();
 		}
 	}
 

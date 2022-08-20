@@ -9,7 +9,7 @@ public class SpawnStars : MonoBehaviour
     [SerializeField] private GameObject prefabBubbleStar;
     private Vector3 _center;
     [SerializeField] private Vector3 size;
-    [SerializeField] private float delay = 1.0f;
+    [SerializeField] private float delay = 2.0f;
     private void Start()
     {
         StartCoroutine(SpawnStar());

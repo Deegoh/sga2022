@@ -25,6 +25,7 @@ public class EndingTextManager : MonoBehaviour
 		if (GameManager.instance.ending)
 		{
 			finA.SetActive(true);
+			GameManager.instance.ending = false;
 		}
 		else
 		{
@@ -63,14 +64,14 @@ public class EndingTextManager : MonoBehaviour
 	
 	public void MenuGame()
 	{
-		//SoundTracker.instance.PlayBgAmbient();
+		SoundTracker.instance.PlayBgAmbient();
 		GameManager.instance.ReturnMainMenu();
 	}
 	
 	public void ReplayGame()
 	{
-		//SoundTracker.instance.PlayBgAmbient();
-		//SoundTracker.instance.PlayBgShady();
+		SoundTracker.instance.PlayBgAmbient();
+		SoundTracker.instance.PlayBgShady();
 		GameManager.instance.StartGame();
 	}
 }

@@ -13,8 +13,8 @@ public class IAStars : MonoBehaviour
     private void Start ()
     {
         string currentSentence = LevelManager.Instance.Paragraphs.CurrentSentence;
-        Debug.Log("The currentSentence: " + currentSentence);
-        Debug.Log("The letter: " + LevelManager.Instance.letter);
+        // Debug.Log("The currentSentence: " + currentSentence);
+        // Debug.Log("The letter: " + LevelManager.Instance.letter);
         personalLetter = LevelManager.Instance.letter;
         // LevelManager.Instance.Paragraphs.removeChar(LevelManager.Instance.letter);
         LevelManager.Instance.Paragraphs.stars.Add(this);

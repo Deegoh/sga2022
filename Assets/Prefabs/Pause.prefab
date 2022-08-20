@@ -543,7 +543,7 @@ RectTransform:
   m_GameObject: {fileID: 5076092592319664374}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.87527347, y: 0.87527347, z: 0.87527347}
+  m_LocalScale: {x: 1.2598425, y: 1.2598425, z: 1.2598425}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4280731637316272075}
@@ -563,7 +563,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5076092592319664374}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 0}
@@ -634,3 +634,4 @@ MonoBehaviour:
   _play: {fileID: 4280731637013193822}
   _quit: {fileID: 4280731636256888502}
   _pauseMenu: {fileID: 5076092592319664267}
+  _isPause: 0

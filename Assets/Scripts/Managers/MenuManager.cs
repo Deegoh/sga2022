@@ -71,7 +71,6 @@ public class MenuManager : MonoBehaviour
 		}
 		SoundTracker.instance.PlayBgMenu();
 		SoundTracker.instance.PlayBgShady();
-		GameManager.instance.StartGame();
 	}
 	
 	private IEnumerator Credit()

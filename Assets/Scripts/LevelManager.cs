@@ -42,7 +42,7 @@ public class LevelManager : MonoBehaviour
         //Check the type of the current event, making sure to take in only the KeyDown of the keystroke.
         //char.IsLetter to filter out all other KeyCodes besides alphabetical.
         bool isAlphabeticalChar = e.type == EventType.KeyDown && keyString.Length == 1 && char.IsLetter(keyString[0]);
-        if (!isAlphabeticalChar)
+        if (!isAlphabeticalChar || PauseManager.Instance._isPause)
             return;
         char c = keyString.ToLower()[0];
         int oldInput = failedInputs;
@@ -61,7 +61,7 @@ public class LevelManager : MonoBehaviour
                 Instance.Paragraphs.removeChar(c);
                 if (star)
                     Destroy(star.gameObject);
-                //SoundTracker.instance.PlayType();
+                SoundTracker.instance.PlayType();
                 break;
             }
             else if (!letters.Contains(c))

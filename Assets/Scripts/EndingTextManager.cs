@@ -9,7 +9,8 @@ using UnityEngine.EventSystems;
 public class EndingTextManager : MonoBehaviour
 {
 	[SerializeField] private TMP_Text textOutput;
-	[SerializeField] private string[] DeathText;
+	[SerializeField] private GameObject finA;
+	[SerializeField] private GameObject finB;
 	[Header("endMenu")]
 	[SerializeField] private Button _replayButton;
 	[SerializeField] private Button _mainMenuButton;
@@ -21,7 +22,14 @@ public class EndingTextManager : MonoBehaviour
 	{
 		_replayButton.onClick.AddListener(ReplayGame);
 		_mainMenuButton.onClick.AddListener(MenuGame);
-		textOutput.text = DeathText[GameManager.instance.indexOfDeath];
+		if (GameManager.instance.ending)
+		{
+			finA.SetActive(true);
+		}
+		else
+		{
+			finB.SetActive(true);
+		}
 	}
 
 	private void Update()

@@ -16,7 +16,6 @@ public class PauseManager : MonoBehaviour
 	[SerializeField] private Canvas _pauseMenu;
 	public static PauseManager Instance;
 	public bool _isPause;
-	private GameObject _lastselect;
 
 	private void Start()
 	{
@@ -24,19 +23,14 @@ public class PauseManager : MonoBehaviour
 		_quitButton.onClick.AddListener(QuitGame);
 		_pauseMenu.enabled = false;
 		EventSystem.current.firstSelectedGameObject = _playButton.gameObject;
-		// _lastselect = _pauseMenu.GetComponent<GameObject>();
 	}
 	
 	private void Update() 
 	{
-		// if (!EventSystem.current.currentSelectedGameObject)
-		// {
-		// 	EventSystem.current.SetSelectedGameObject(_lastselect);
-		// }
-		// else
-		// {
-		// 	_lastselect = EventSystem.current.currentSelectedGameObject;
-		// }
+		if (!EventSystem.current.currentSelectedGameObject)
+		{
+			EventSystem.current.SetSelectedGameObject(_playButton.gameObject);
+		}
 		if (Input.GetKeyUp(KeyCode.Escape)) 
 		{
 			PlayGame();

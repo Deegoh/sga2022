@@ -15,7 +15,7 @@ public class MenuManager : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI _start;
 	[SerializeField] private TextMeshProUGUI _credit;
 	[SerializeField] private TextMeshProUGUI _quit;
-	// private GameObject _lastselect;
+	private GameObject _lastselect;
 	[Header("Animator")]
 	[SerializeField] private Animator startAnimation;
 
@@ -31,16 +31,14 @@ public class MenuManager : MonoBehaviour
 
 	private void Update()
 	{
-		/*if (!EventSystem.current.currentSelectedGameObject)
+		if (!EventSystem.current.currentSelectedGameObject)
 		{
 			EventSystem.current.SetSelectedGameObject(_lastselect);
-			
 		}
 		else
 		{
 			_lastselect = EventSystem.current.currentSelectedGameObject;
 		}
-*/
 
 		_start.color = new Color(0, 242, 255);
 		_credit.color = new Color(0, 242, 255);

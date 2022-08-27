@@ -36,14 +36,10 @@ public class EndingTextManager : MonoBehaviour
 
 	private void Update()
 	{
-		// if (!EventSystem.current.currentSelectedGameObject)
-		// {
-		// 	EventSystem.current.SetSelectedGameObject(_lastselect);
-		// }
-		// else
-		// {
-		// 	_lastselect = EventSystem.current.currentSelectedGameObject;
-		// }
+		if (!EventSystem.current.currentSelectedGameObject)
+		{
+			EventSystem.current.SetSelectedGameObject(_replayButton.gameObject);
+		}
 		_replay.color = new Color(0, 242, 255);
 		_mainMenu.color = new Color(0, 242, 255);
 		switch (EventSystem.current.currentSelectedGameObject.name)

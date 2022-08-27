@@ -30,18 +30,16 @@ public class Sentences
             if (String.IsNullOrEmpty(sentences[_i]))
             {
                 _i++;
-                if (LevelManager.Instance.level < sentences.Count)
-                {
-                    LevelChangeManager.Instance.ChangeLevelHandler();
-                }
-                LevelManager.Instance.level++;
+                LevelChangeManager.Instance.ChangeLevelHandler();
             }
         }
     }
 
     public char choseRandomChar()
     {
-        int randomIndex = Random.Range(0, sentences[_i].Length);
-        return sentences[_i][randomIndex];
+        if (LevelManager.Instance.Paragraphs.sentences.Count == TextManager.Instance.currentTextIndex)
+            return 'e' ;
+        int randomIndex = Random.Range(0, LevelManager.Instance.Paragraphs.sentences[TextManager.Instance.currentTextIndex].Length);
+        return LevelManager.Instance.Paragraphs.sentences[TextManager.Instance.currentTextIndex][randomIndex];
     }
 }

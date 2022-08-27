@@ -49,6 +49,7 @@ public class TextManager : MonoBehaviour
     {
         // _s = File.ReadAllText("Assets/Text/wordsOnly.txt"); // read .txt to string
         _s = "univers\nneant\nrecherche\nrepere\ncrepuscule\nminuscule\nvide\nexister";
+        //_s = "un\nnea\nrec\nre\ncre\nmi\nvi\nex";
         _l = new List<string>(_s.Split('\n')); // string to list
 
         _r = new List<string>(_l); // create remainingLetters
@@ -69,11 +70,16 @@ public class TextManager : MonoBehaviour
     }
     public void UpdateText()
     {
-        Debug.Log("GIGA CHAD LOL");
         //if (LevelManager.Instance.Paragraphs.sentences) 
-        textOutput.text = _paragraphs[++currentTextIndex];
+        if (LevelManager.Instance.Paragraphs.sentences.Count > TextManager.Instance.currentTextIndex + 1)
+            textOutput.text = _paragraphs[++currentTextIndex];
+        else
+        {
+            textOutput.text = "Well done !!!";
+            textOutput.color = Color.yellow;
+        }
         //else
-          //  textOutput.text = "";
+        //  textOutput.text = "";
     }
 
     public void OnCorrectLetter(char letter)
@@ -91,31 +97,10 @@ public class TextManager : MonoBehaviour
         {
             if (_remainingLetters[currentTextIndex][i] == '*')
             {
-                // // to bypass when i = 0
-                // if (j > 0)
-                // {
-                //     if (_remainingLetters[currentTextIndex][i - 1] == '*')
-                //     {
-                //         newString = newString.Insert(j - colorMarkupOut.Length, _paragraphs[currentTextIndex][i].ToString());
-                //         newString = newString.Remove(j + 1, 1);
-                //         ++i;
-                //         continue ;
-                //     }
-                // }
                 newString = newString.Insert(j, colorMarkupIn + _paragraphs[currentTextIndex][i] + colorMarkupOut);
                 j += colorMarkupIn.Length + colorMarkupOut.Length;
                 newString = newString.Remove(j + 1, 1);
-                // Debug.Log("NEWSTRING IS : " + newString[j + 1]);
-                // Debug.Log("REGEX IS : " + new Regex("[a-zA-Z0-9-]"));
-                // if (!new Regex("[a-zA-Z0-9 -]").ToString().Contains(newString[j + 1]))
-                // {
-                //     Debug.Log("INSANE !!");
-                //     newString = newString.Insert(j + 1, colorMarkupIn + newString[j + 1] + colorMarkupOut);
-                //     j += colorMarkupIn.Length + colorMarkupOut.Length;
-                //     newString = newString.Remove(j + 2, 1);
-                // }
             }
-
             ++i;
         }
         textOutput.text = newString;

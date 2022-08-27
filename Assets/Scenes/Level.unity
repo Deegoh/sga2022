@@ -5474,6 +5474,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: {fileID: 1112799443}
+  _camera: {fileID: 1646027047}
+  _spawner: {fileID: 1335054487}
 --- !u!4 &368222908
 Transform:
   m_ObjectHideFlags: 0
@@ -21240,7 +21242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[0]
-      value: salut
+      value: univers
       objectReference: {fileID: 0}
     - target: {fileID: 8017885411501931156, guid: 839dea26d8fe763438019ee1d533ba80, type: 3}
       propertyPath: sentences.sentences.Array.data[1]

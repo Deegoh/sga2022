@@ -20,6 +20,11 @@ public class FollowPlayer : MonoBehaviour {
         rb.velocity = new Vector3(0,0,0);
     }
     
+    public void SetSpeed(float speed)
+    {
+        rb.velocity = new Vector3(0,0,speed);
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Star")
@@ -28,6 +33,4 @@ public class FollowPlayer : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
-
-    // Update is called once per frame
 }

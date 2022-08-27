@@ -19,14 +19,14 @@ public class SpawnStars : MonoBehaviour
     {
         while (true)
         {
-            if (LevelManager.Instance.Paragraphs.sentences.Count <= LevelManager.Instance.level)
+            if (LevelManager.Instance.Paragraphs.sentences.Count == TextManager.Instance.currentTextIndex)
                 break ;
             GameObject starType = prefabStar;
-            if (LevelManager.Instance.level > 2)
-            {
-                if (Random.Range(1, 10) % 2 == 0)
-                    starType = prefabBubbleStar;
-            }
+            //if (TextManager.Instance.currentTextIndex > 2)
+            //{
+                //if (Random.Range(1, 10) % 2 == 0)
+                 //   starType = prefabBubbleStar;
+            //}
             _center = transform.position;
             LevelManager.Instance.letter = LevelManager.Instance.Paragraphs.choseRandomChar();
             int value;
@@ -38,10 +38,10 @@ public class SpawnStars : MonoBehaviour
                 if (renderer.CompareTag("Letter"))
                 {
                     renderer.sprite = LevelManager.Instance.starSprites[value];
+                    Debug.Log(renderer.sprite);
                     break;
                 }
             }
-            // LevelManager.Alphabet.chosenLetter;
             Vector3 pos = _center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
             Instantiate(starType, pos, Quaternion.identity);
             yield return new WaitForSeconds(delay);
